@@ -8,12 +8,21 @@
         <p class="lead">Con esta app puedes majera tus listas de tareas y asi no olvidar ninguna! </p>
         <hr class="my-4">
 
-        <p>Tienes una cuenta?</p>
+        {% if g.user %}
+                <div class="d-flex justify-content-center">
+                    <p class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">Bienvenido {{ g.user.username }}!! </p>
+                </div>
+            {% else %}
+            <p>Tienes una cuenta?</p>
+            <div class="d-flex justify-content-center">
+                <a href="{{url_for('auth.login')}}" class="btn btn-primary mx-2"> Iniciar Sesion</a>
+                <a href="{{url_for('auth.register')}}" class="btn btn-secondary mx-2"> Registrarse</a>
+            </div>
+        {% endif %}
 
-        <div class="d-flex justify-content-center">
-            <a href="{{url_for('auth.login')}}" class="btn btn-primary mx-2"> Iniciar Sesion</a>
-            <a href="{{url_for('auth.register')}}" class="btn btn-secondary mx-2"> Registrarse</a>
-        </div>
+       
+
+        
 
     </div>
 {% endblock %}

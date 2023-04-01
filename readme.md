@@ -1,1 +1,1 @@
-An app about To-do List made with PYTHON, FLASK, BOOTSTRAP etc
+An app about To-do List made with PYTHON, FLASK, BOOTSTRAP, SQLALCHEMY.

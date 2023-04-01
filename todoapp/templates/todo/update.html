@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section class="container-sm">
+        <h3 class="text-center mt-3 mb-3">{% block title %}Edit a task{% endblock %}</h3>
+        <form action="" method="POST">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name="title" id="title" required value="{{ todo.title }}">
+            </div>
+            <div class="form-group">
+                <label for="desc">Description</label>
+                <textarea type="text" class="form-control" name="desc" id="desc" rows="3">{{ todo.desc }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="status">Complete</label>
+                <input type="checkbox" class="form-check-input" name="status" id="status" {% if todo.status == true %} checked {% endif %}>
+            </div>
+            <br>
+
+            <div class="text-center">
+                <input type="submit" class="btn btn-primary" value="guardar">
+                <a href="{{url_for('todo.index')}}" class="btn btn-secundary">Cancel</a>
+            </div>
+
+        </form>
+
+
+        
+
+    </section>
+
+   
+    
+{% endblock %}
